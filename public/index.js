@@ -3,7 +3,7 @@ var input = document.querySelector("input")
 var button = document.querySelector(".field button")
 
 
-var url = "http://localhost:3000/"
+var url = "https://sender-github-io.onrender.com/"
 
 const data = async ()=>{
     const response = await fetch(`${url}664f42fcef350a6dcc675116`)
