@@ -2,32 +2,37 @@ body{
     display: flex;flex-direction: column;
     align-items: center;justify-content: start;
     width: 100%;height: 100vh;
-    box-sizing: border-box;padding: 20px 0px;margin: 0;
+    box-sizing: border-box;padding: 5px 0px;margin: 0;
     font-family: sans-serif;position: relative;
     overflow: hidden;gap: 20px;
 }
 
 
 .profile{
-    width: 600px;height: 240px;
+    width: 600px;height: 270px;
     border-radius: 4px;
-    display: flex;align-items: center;justify-content: space-around;
-    gap: 15px;color: white;
-    background-color: #1d1d1d;
+    display: flex;align-items: center;justify-content: center;
+    gap: 7px;color: white;flex-direction: column;
+    background-color: #000000;
+    padding: 20px 0px;position: relative;
 }
 
 .profile .img{
     overflow: hidden;border-radius: 100%;
     border: 5px solid #E1306C;/*#E1306C*/
+    height: 70px;width: 70px;z-index: 999;
 }
 
 
 
 
-.profile .pic{
+
+.profile .img .pic{
     border-radius: 100%;object-fit: cover;
     animation: mymove 2s infinite;animation-delay: 3.3s;
     animation-duration: 5s;
+    width: 100%;height: 100%;
+    z-index: 999;
 }
 
 @keyframes mymove {
@@ -40,10 +45,11 @@ body{
 .profile .cntrls{
     display: flex;flex-direction:column;
     align-items: start;justify-content: center;
+    z-index: 999;
 }
 
 .profile .cntrls .cl1{
-    display: flex;flex-direction: column;
+    display: flex;flex-direction: column;justify-content: center;align-items: center;
 }
 
 .profile .cntrls .cl1 .links{
@@ -66,18 +72,18 @@ body{
     background-color: #fff;color: #E1306C;opacity: .8;
 }
 
-
+.profile .cntrls .owner{width: 100%;}
 .profile .cntrls .owner img{
     width: 50px;height: 50px;border-radius: 100%;
 }
 .profile .cntrls .owner p{
     display: flex;align-items: center;justify-content: center;
-    font-size: 14px;opacity: .8;gap: 15px;
+    font-size: 14px;opacity: 1;gap: 15px;width: 100%;
 }
 
 .profile .cntrls .owner p a{
     display: flex;align-items: center;justify-content: center;
-    gap: 15px;font-size: 30px;text-decoration: none;background-color: #252525;
+    gap: 15px;font-size: 30px;text-decoration: none;background-color: #222222;
     padding: 5px 10px;border-radius: 12px;
 }
 
@@ -112,7 +118,7 @@ body{
     .profile .pic{
         width: 100px;height: 100px;
     }
-    .profile .img{border: 2px #E1306C solid;}
+    .profile .img{border: 4px #E1306C solid;}
     .profile .cntrls .cl1 h2{
         font-size: 20px;font-weight: 400;
     }
@@ -133,7 +139,7 @@ body{
     position: relative;width: 90%;display: flex;align-items: center;justify-content: space-between;
     gap: 12px;flex-direction: row;height: 40px;margin: 0 auto;padding: 0 10px;
     /* From https://css.glass */
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
@@ -151,7 +157,7 @@ body{
 }
 
 .field button{
-    border: none;background-color: black;color: white;
+    border: none;background-color: #E1306C;color: white;
     width: auto;height: 30px;border-radius: 4px;
     cursor: pointer;
 }
@@ -173,7 +179,8 @@ body{
 .table .tb{
     display: flex;align-items: start;justify-content: start;
     text-align: left;width: 100%;
-    background-color: #e7e7e7;border-radius: 4px;
+    background-color: #ffffff;border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
 }
 
 
@@ -188,7 +195,7 @@ body{
 }
 
 .cntrls button:first-child{
-    border: none;background-color: black;color: white;padding: 5 10px;
+    border: none;background-color: #E1306C;color: white;padding: 5 10px;
     border-radius: 4px;cursor: pointer;
 }
 
@@ -196,5 +203,7 @@ body{
     border: none;padding: 5 10px;background-color: transparent;
     border-bottom: 1px solid black;cursor: pointer;
 }
+
+i{height: 30px;position: absolute;left: 10px;top: 10px;color: red;}
 
 
