@@ -54,7 +54,7 @@ const add = async ()=>{
 
 
 const start = async()=>{
-    await window.open("https://www.instagram.com/")
+    // await window.open("https://www.instagram.com/")
     const ele = document.querySelector("i span")
     ele.innerHTML = "chat start"
     ele.style.color = "green"
