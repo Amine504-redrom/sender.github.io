@@ -56,7 +56,7 @@ const add = async ()=>{
 const start = async()=>{
     // await window.open("https://www.instagram.com/")
     const ele = document.querySelector("i span")
-    ele.innerHTML = "chat start"
+    ele.innerHTML = "ON"
     ele.style.color = "green"
     const response = await fetch(`${url}start/664f42fcef350a6dcc675116`,{
         method: 'GET',
@@ -71,7 +71,7 @@ const start = async()=>{
 
 const stop = async ()=>{
     const ele = document.querySelector("i span")
-    ele.innerHTML = "chat off"
+    ele.innerHTML = "OFF"
     ele.style.color = "red"
     await fetch(`${url}stop`).then(()=>{console.log("Session Closed!")}).catch((err)=>{err})
 }
