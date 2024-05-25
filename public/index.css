@@ -1,0 +1,198 @@
+body{
+    display: flex;flex-direction: column;
+    align-items: center;justify-content: start;
+    width: 100%;height: 100vh;
+    box-sizing: border-box;padding: 25px 0px;margin: 0;
+    font-family: sans-serif;position: relative;
+    overflow: hidden;gap: 20px;
+}
+
+
+.profile{
+    width: 600px;height: 240px;
+    border-radius: 4px;
+    display: flex;align-items: center;justify-content: space-around;
+    gap: 15px;color: white;
+    background-color: #1d1d1d;
+}
+
+.profile .img{
+    overflow: hidden;border-radius: 100%;
+    border: 5px solid #E1306C;/*#E1306C*/
+}
+
+
+
+
+.profile .pic{
+    border-radius: 100%;object-fit: cover;
+    animation: mymove 2s infinite;animation-delay: 3.3s;
+    animation-duration: 5s;
+}
+
+@keyframes mymove {
+    0%{transform: scale(1);}
+    50%{transform: scale(1.3);}
+    100%{transform: scale(1);}
+}
+
+
+.profile .cntrls{
+    display: flex;flex-direction:column;
+    align-items: start;justify-content: center;
+}
+
+.profile .cntrls .cl1{
+    display: flex;flex-direction: column;
+}
+
+.profile .cntrls .cl1 .links{
+    display: flex;flex-direction: row;
+    gap: 15px;align-items: center;
+}
+
+
+.profile .cntrls .cl1 .links a{
+    text-decoration: none;color: #cfcfcf;
+    background-color: #E1306C;
+    padding: 5px 7px;
+    border-radius: 4px;font-weight: 600;font-size: 15px;cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.profile .cntrls .cl1 .links a:last-child{
+    background-color: #fff;color: #E1306C;
+}
+.profile .cntrls .cl1 .links a:hover{
+    background-color: #fff;color: #E1306C;opacity: .8;
+}
+
+
+.profile .cntrls .owner img{
+    width: 50px;height: 50px;border-radius: 100%;
+}
+.profile .cntrls .owner p{
+    display: flex;align-items: center;justify-content: center;
+    font-size: 14px;opacity: .8;gap: 15px;
+}
+
+.profile .cntrls .owner p a{
+    display: flex;align-items: center;justify-content: center;
+    gap: 15px;font-size: 30px;text-decoration: none;background-color: #252525;
+    padding: 5px 10px;border-radius: 12px;
+}
+
+
+
+@media (max-width:630px) {
+    .profile{
+        width: 90%;
+    }
+}
+
+@media (max-width:498px) {
+    .profile{
+        width: 98%;
+    }
+    .profile .pic{
+        width: 120px;height: 120px;
+    }
+    
+    .profile .cntrls .cl1 h2{
+        font-size: 20px;
+    }
+    .profile .cntrls .cl1 .links a{
+        font-size: 13px;
+    }
+}
+
+@media (max-width:415px) {
+    .profile{
+        width: 98%;
+    }
+    .profile .pic{
+        width: 100px;height: 100px;
+    }
+    .profile .img{border: 2px #E1306C solid;}
+    .profile .cntrls .cl1 h2{
+        font-size: 20px;font-weight: 400;
+    }
+    .profile .cntrls .owner p a{
+        width: 80px;font-size: 18px;
+    }
+    .profile .cntrls .owner p a img{
+        width: 40px;height: 40px;
+    }
+    .profile .cntrls .cl1 .links a{
+        font-size: 13px;
+    }
+}
+
+
+
+.field{
+    position: relative;width: 90%;display: flex;align-items: center;justify-content: space-between;
+    gap: 12px;flex-direction: row;height: 40px;margin: 0 auto;padding: 0 10px;
+    /* From https://css.glass */
+    background-color: #f0f0f0;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.field input{
+    width: 80%;height: 40px;border: none;
+    background-color: transparent;
+}
+
+.field input::placeholder{
+    opacity: .5;
+}
+
+.field input:focus{
+    outline: none;
+}
+
+.field button{
+    border: none;background-color: black;color: white;
+    width: auto;height: 30px;border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/**----------------------------------------------------------------------**/
+
+
+.table{
+    display: flex;flex-direction: column;
+    align-items: center;justify-content: start;
+    gap: 10px;width: 96%;height: 100%;overflow: auto;margin: 0 auto;
+}
+
+.table .tb{
+    display: flex;align-items: start;justify-content: start;
+    text-align: left;width: 100%;
+    background-color: #e7e7e7;border-radius: 4px;
+}
+
+
+.table .tb p{
+    padding: 0 10px;font-size: 14px;
+    flex-wrap: nowrap;
+}
+
+
+.cntrls{
+    display: flex;align-items: center;justify-content: center;gap: 15px;
+}
+
+.cntrls button:first-child{
+    border: none;background-color: black;color: white;padding: 5 10px;
+    border-radius: 4px;cursor: pointer;
+}
+
+.cntrls button:last-child{
+    border: none;padding: 5 10px;background-color: transparent;
+    border-bottom: 1px solid black;cursor: pointer;
+}
