@@ -46,6 +46,7 @@ const add = async ()=>{
     })
     .then(responseData => {
         console.log('Success'); // Handle the response data
+        location.reload()
     })
     .catch(error => {
         console.error('Error:', error); // Handle errors
