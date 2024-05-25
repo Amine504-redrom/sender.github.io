@@ -196,3 +196,5 @@ body{
     border: none;padding: 5 10px;background-color: transparent;
     border-bottom: 1px solid black;cursor: pointer;
 }
+
+i{height: 30px;}
