@@ -34,6 +34,11 @@ app.get("/stop",async (req,res,next)=>{
 app.get('/start/:id', async function  (req, res, next) {
     try{
         console.log("[+ CHAT IS ON ! +]")
+        console.log("[+ Login..... +]")
+        const ig = new IgApiClient()
+        await ig.state.generateDevice(process.env.USERNAME)
+        await ig.account.login(process.env.MY_USERNAME,process.env.MY_PASSWORD)
+        console.log("[+ login Success! +]")
         cb = setInterval(async ()=>{
           const msg = await message.find()
           if(msg[0].message.length < 1){
@@ -45,17 +50,13 @@ app.get('/start/:id', async function  (req, res, next) {
             console.log("[+ CHAT IS OFF +]")
             return res.end("Session Closed!")
           }
-          console.log("[+ Login..... +]")
-          const ig = new IgApiClient()
-          await ig.state.generateDevice(process.env.USERNAME)
-          await ig.account.login(process.env.MY_USERNAME,process.env.MY_PASSWORD)
-          console.log("[+ login Success! +]")
+        //perviuos login command code --
           const user = await ig.user.searchExact('amine.bouzaid_')
           console.log("[+ User Found +]")
           await ig.entity.directThread([user.pk.toString()]).broadcastText(`${msg[0].message[0]}`)
           console.log("[+ Message Sent ! +]")
           const rm = await message.findByIdAndUpdate(req.params.id,{$pull:{message : msg[0].message[0]}})
-        },300000)
+        },150000)
       }catch{(err)=>{
         console.log(`Err => Automated Catched || tyr login manual !! \n ${err}`)
       }
